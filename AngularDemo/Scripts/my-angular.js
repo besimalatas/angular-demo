@@ -1,18 +1,21 @@
-﻿
-var application =angular.module("myApp", ["ngRoute"]);
+﻿var application = angular.module("myApp", ["ngRoute"]);
 
-application.config(function ($routeProvider,$locationProvider) {
+
+application.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
-        .when('/index1',
-    {
-        templateUrl: "/Templates/Indexsad1.html"
-    });
+        .when('/add',
+        {
+            templateUrl: 'Templates/index1.html'
+        })
+        .when('/show',
+        {
+            templateUrl: 'Templates/index2.html'
+        });
 
-    $locationProvider.html5Mode(false).hashPrefix("!");
+
 });
 
-application.controller("myController",
-    function($scope) {
-       
-    });
+application.controller("myController", function ($scope) {
+    alert("ready");
+});
